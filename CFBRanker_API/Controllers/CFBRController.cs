@@ -2,6 +2,7 @@
 using CFB_Ranker.Persistence.Serialization;
 using CFBRanker_API.Service;
 using CFBRanker_API.Service.RankingAlgo;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CFBRanker_API.Controllers
@@ -18,6 +19,7 @@ namespace CFBRanker_API.Controllers
             _service = new();
         }
 
+        [EnableCors("Policy 1")]
         [HttpGet]
         public IActionResult GetTeamsDefault()
         {
